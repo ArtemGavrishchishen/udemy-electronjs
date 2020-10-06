@@ -1,4 +1,6 @@
-const { app, BrowserWindow, Notification } = require('electron');
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
+const isDev = !app.isPackaged;
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -7,25 +9,23 @@ function createWindow() {
     backgroundColor: 'white',
     resizable: false,
     webPreferences: {
-      nodeIntegration: true,
+      nodeIntegration: false,
+      worldSafeExecuteJavaScript: true,
+      contextIsolation: true,
     },
   });
 
   win.loadFile('index.html');
-  win.webContents.openDevTools();
+  isDev && win.webContents.openDevTools();
 }
 
-app.whenReady().then(() => {
-  createWindow();
+if (isDev) {
+  require('electron-reload')(__dirname, {
+    electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+  });
+}
 
-  if (Notification.isSupported()) {
-    const notification = new Notification({
-      title: 'test notification',
-      body: 'My test message',
-    });
-    notification.show();
-  }
-});
+app.whenReady().then(createWindow);
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
