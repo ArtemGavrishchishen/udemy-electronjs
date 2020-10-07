@@ -1,6 +1,15 @@
 import React from 'react';
-import ReactDom from 'react-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+import { render } from 'react-dom';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/index.scss';
 
 import App from './App';
 
-ReactDom.render(<App />, document.getElementById('electronChat'));
+render(
+  <BrowserRouter>
+    <Route component={App} />
+  </BrowserRouter>,
+  document.getElementById('chatApp')
+);

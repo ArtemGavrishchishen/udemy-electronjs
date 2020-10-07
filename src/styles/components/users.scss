@@ -1,0 +1,117 @@
+.list-container {
+  position: relative;
+  padding: 1rem 0;
+  border-right: 1px solid #e6ecf3;
+  height: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.items {
+  padding: 0;
+}
+
+.items .item {
+  position: relative;
+  width: 100%;
+  padding: 10px 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #f0f4f8;
+}
+
+.items .item.active-item,
+.item:hover {
+  background-color: #ffffff;
+  /* Fallback Color */
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#f7f9fb),
+    to(#ffffff)
+  );
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(right, #f7f9fb, #ffffff);
+  /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(right, #f7f9fb, #ffffff);
+  /* FF3.6 */
+  background-image: -ms-linear-gradient(right, #f7f9fb, #ffffff);
+  /* IE10 */
+  background-image: -o-linear-gradient(right, #f7f9fb, #ffffff);
+  /* Opera 11.10+ */
+  background-image: linear-gradient(right, #f7f9fb, #ffffff);
+}
+
+.items .person:last-child {
+  border-bottom: 0;
+}
+
+.items .item .item-status {
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+}
+
+.items .item .item-status img {
+  width: 48px;
+  height: 48px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+
+.items .item .item-status .status {
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-radius: 100px;
+  background: #e6ecf3;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.items .item .item-status .status.online {
+  background: #9ec94a;
+}
+
+.items .item .item-status .status.offline {
+  background: #c4d2e2;
+}
+
+.items .item .item-status .status.away {
+  background: #f9be52;
+}
+
+.items .item .item-status .status.busy {
+  background: #fd7274;
+}
+
+.items .item p.name-time {
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: inline-block;
+}
+
+.items .item p.name-time .time {
+  font-weight: 400;
+  font-size: 0.7rem;
+  text-align: right;
+  color: #8796af;
+}
+
+@media (max-width: 767px) {
+  .items .item .item-status img {
+    width: 30px;
+    height: 30px;
+  }
+  .items .item p.name-time {
+    display: none;
+  }
+  .items .item p.name-time .time {
+    display: none;
+  }
+}

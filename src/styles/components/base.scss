@@ -1,0 +1,107 @@
+$white: #fff !default;
+$gray-100: #f8f9fc !default;
+$gray-200: #f4f4f4 !default;
+$gray-300: #dddfeb !default;
+$gray-400: #d1d3e2 !default;
+$gray-500: #b7b9cc !default;
+$gray-600: #858796 !default;
+$gray-700: #6e707e !default;
+$gray-800: #5a5c69 !default;
+$gray-900: #3a3b45 !default;
+$black: #000 !default;
+
+$blue: #4e73df !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #e74a3b !default;
+$orange: #fd7e14 !default;
+$yellow: #f6c23e !default;
+$green: #1cc88a !default;
+$teal: #20c9a6 !default;
+$cyan: #36b9cc !default;
+
+$brand-google: #ea4335 !default;
+$brand-facebook: #3b5998 !default;
+
+html,
+body {
+  height: 100%;
+}
+
+#chatApp {
+  height: 100%;
+}
+
+.content-wrapper {
+  height: 100%;
+  background-color: $gray-200;
+  padding-top: 70px;
+  transition: background-color 1s;
+
+  &.dark {
+    background-color: $gray-900;
+    color: white;
+
+    .chat-container li .chat-text-wrapper {
+      background: #4d4d4d;
+    }
+
+    .chat-navbar,
+    .chat-name-container {
+      border-bottom: 1px solid $gray-700;
+    }
+
+    .list-container {
+      border-right: 1px solid $gray-700;
+
+      .item {
+        border-bottom: 1px solid $gray-700;
+      }
+    }
+  }
+}
+
+.app-title {
+  padding: 10px 1rem;
+}
+
+.fh {
+  height: 100%;
+}
+
+.chat-search-box {
+  -webkit-border-radius: 3px 0 0 0;
+  -moz-border-radius: 3px 0 0 0;
+  border-radius: 3px 0 0 0;
+  padding: 0.75rem 1rem;
+}
+
+.chat-search-box .input-group .form-control {
+  -webkit-border-radius: 2px 0 0 2px;
+  -moz-border-radius: 2px 0 0 2px;
+  border-radius: 2px 0 0 2px;
+}
+
+.chat-search-box .input-group .form-control:focus {
+  border-right: 0;
+}
+
+.chat-search-box .input-group .input-group-btn .btn {
+  -webkit-border-radius: 0 2px 2px 0;
+  -moz-border-radius: 0 2px 2px 0;
+  border-radius: 0 2px 2px 0;
+  margin: 0;
+}
+
+.chat-search-box .input-group .input-group-btn .btn i {
+  font-size: 1.2rem;
+  line-height: 100%;
+  vertical-align: middle;
+}
+
+@media (max-width: 767px) {
+  .chat-search-box {
+    display: none;
+  }
+}
