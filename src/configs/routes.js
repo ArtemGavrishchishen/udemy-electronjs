@@ -3,4 +3,5 @@ export default Object.freeze({
   SETTINGS: '/settings',
   LOGIN: '/login',
   REGISTER: '/register',
+  CHAT: '/chat',
 });

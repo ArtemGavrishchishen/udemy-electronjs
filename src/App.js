@@ -3,6 +3,10 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import HomeView from './views/Home';
+import ChatView from './views/Chat';
+import SettingsView from './views/Settings';
+import LoginView from './views/Login';
+import RegisterView from './views/Register';
 
 import routes from './configs/routes';
 
@@ -13,15 +17,10 @@ const App = () => {
       <div className="content-wrapper">
         <Switch>
           <Route exact path={routes.HOME} component={HomeView} />
-          <Route exact path={routes.SETTINGS}>
-            <h1>I am SETTINGS</h1>
-          </Route>
-          <Route exact path={routes.LOGIN}>
-            <h1>I am LOGIN</h1>
-          </Route>
-          <Route exact path={routes.REGISTER}>
-            <h1>I am REGISTER</h1>
-          </Route>
+          <Route exact path={routes.CHAT + '/:id'} component={ChatView} />
+          <Route exact path={routes.SETTINGS} component={SettingsView} />
+          <Route exact path={routes.LOGIN} component={LoginView} />
+          <Route exact path={routes.REGISTER} component={RegisterView} />
 
           <Redirect to="/" />
         </Switch>
