@@ -16,13 +16,12 @@ const App = () => {
       <Navbar />
       <div className="content-wrapper">
         <Switch>
-          <Route exact path={routes.HOME} component={HomeView} />
           <Route exact path={routes.CHAT + '/:id'} component={ChatView} />
           <Route exact path={routes.SETTINGS} component={SettingsView} />
           <Route exact path={routes.LOGIN} component={LoginView} />
           <Route exact path={routes.REGISTER} component={RegisterView} />
 
-          <Redirect to="/" />
+          <Route path={routes.HOME} component={HomeView} />
         </Switch>
       </div>
     </>
