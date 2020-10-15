@@ -1,7 +1,6 @@
 export default Object.freeze({
-  HOME: '/',
+  WELCOME: '/',
   SETTINGS: '/settings',
-  LOGIN: '/login',
-  REGISTER: '/register',
+  HOME: '/home',
   CHAT: '/chat',
 });

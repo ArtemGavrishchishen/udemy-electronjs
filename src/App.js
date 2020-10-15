@@ -5,8 +5,7 @@ import Navbar from './components/Navbar';
 import HomeView from './views/Home';
 import ChatView from './views/Chat';
 import SettingsView from './views/Settings';
-import LoginView from './views/Login';
-import RegisterView from './views/Register';
+import WelcomeView from './views/Welcome';
 
 import routes from './configs/routes';
 
@@ -18,10 +17,9 @@ const App = () => {
         <Switch>
           <Route exact path={routes.CHAT + '/:id'} component={ChatView} />
           <Route exact path={routes.SETTINGS} component={SettingsView} />
-          <Route exact path={routes.LOGIN} component={LoginView} />
-          <Route exact path={routes.REGISTER} component={RegisterView} />
+          <Route exact path={routes.HOME} component={HomeView} />
 
-          <Route path={routes.HOME} component={HomeView} />
+          <Route path={routes.WELCOME} component={WelcomeView} />
         </Switch>
       </div>
     </>
