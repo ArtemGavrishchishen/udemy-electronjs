@@ -1,5 +1,6 @@
-import React from 'react';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Route, Switch } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import Navbar from './components/Navbar';
 import HomeView from './views/Home';
@@ -8,8 +9,15 @@ import SettingsView from './views/Settings';
 import WelcomeView from './views/Welcome';
 
 import routes from './configs/routes';
+import { authActions } from './store/auth';
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(authActions.listenToAuthChanges())
+  }, [dispatch]);
+
   return (
     <>
       <Navbar />

@@ -1,5 +1,0 @@
-const CHATS_FETCH_SUCCESS = 'chats/CHATS_FETCH_SUCCESS';
-
-export default {
-  CHATS_FETCH_SUCCESS,
-};

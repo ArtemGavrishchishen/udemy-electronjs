@@ -1,2 +1,2 @@
-export { default as chatReducers } from './reducers';
-export { default as chatActions } from './actions';
+export { default as chatReducers } from './chatReducers';
+export { default as chatActions } from './chatActions';
