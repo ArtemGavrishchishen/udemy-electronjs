@@ -7,6 +7,12 @@ const DEFAULT_STATE = {
 
 function authReducers(state = DEFAULT_STATE, { type, payload }) {
   switch (type) {
+    case types.AUTH_REGISTER_INIT:
+    case types.AUTH_LOGIN_INIT:
+      return { ...state, isChecking: true }
+    case types.AUTH_REGISTER_SUCCESS:
+    case types.AUTH_LOGIN_SUCCESS:
+      return { ...state, isChecking: false }
     case types.AUTH_ON_INIT:
       return { user: null, isChecking: true }
     case types.AUTH_ON_SUCCESS:

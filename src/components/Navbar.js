@@ -1,10 +1,15 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import routes from '../configs/routes';
+import { authActions } from '../store/auth'
 
 const Navbar = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
+  const user = useSelector(({ auth }) => auth.user)
+
   return (
     <div className="chat-navbar">
       <nav className="chat-navbar-inner">
@@ -24,6 +29,14 @@ const Navbar = () => {
           <Link to={routes.WELCOME} className="btn btn-outline-success ml-2">
             Login
           </Link>
+          {user &&
+            <button
+              onClick={() => dispatch(authActions.logout())}
+              className="btn btn-outline-danger ml-2">
+              Logout
+            </button>
+          }
+
         </div>
       </nav>
     </div>

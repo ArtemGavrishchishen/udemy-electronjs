@@ -4,20 +4,21 @@ import { Redirect } from 'react-router-dom';
 
 import LoginForm from '../components/LoginForm';
 import RegisterForm from '../components/RegisterForm';
+import LoadingViews from '../components/shared/LoadingViews'
 
 import routes from '../configs/routes';
 
 const Welcome = () => {
   const [isLoginView, setIsLogin] = useState(true);
   const user = useSelector(({ auth }) => auth.user);
-  const isCheching = useSelector(({ auth }) => auth.isCheching);
+  const isChecking = useSelector(({ auth }) => auth.isChecking);
 
   const optInText = isLoginView ?
     ['Need an account?', 'Register'] :
     ['Already registered?', 'Login'];
 
-  if (isCheching) {
-    return <h1>Cheching the state...</h1>
+  if (isChecking) {
+    return <LoadingViews />
   }
 
   if (user) {
